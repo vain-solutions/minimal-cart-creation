@@ -1,14 +1,17 @@
 
 import { useState } from 'react';
+import { Plus, Minus, X } from 'lucide-react';
 import { toast } from '../components/ui/use-toast';
-import { type Product } from '../types';
+import { type CartItem } from '../types';
 
 interface Props {
-  items: Product[];
+  items: CartItem[];
   clearCart: () => void;
+  updateQuantity: (itemId: number, newQuantity: number) => void;
+  removeItem: (itemId: number) => void;
 }
 
-export const Cart = ({ items, clearCart }: Props) => {
+export const Cart = ({ items, clearCart, updateQuantity, removeItem }: Props) => {
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -17,12 +20,29 @@ export const Cart = ({ items, clearCart }: Props) => {
     instagram: ''
   });
 
-  const total = items.reduce((sum, item) => sum + item.price, 0);
+  const total = items.reduce((sum, item) => sum + (item.price * item.quantity), 0);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     
-    // In a real app, this would send data to a backend
+    if (!formData.email.includes('@')) {
+      toast({
+        title: "Invalid Email",
+        description: "Please enter a valid email address.",
+        variant: "destructive"
+      });
+      return;
+    }
+
+    if (!formData.phone.match(/^\+?[\d\s-]{8,}$/)) {
+      toast({
+        title: "Invalid Phone Number",
+        description: "Please enter a valid phone number.",
+        variant: "destructive"
+      });
+      return;
+    }
+    
     console.log('Order submitted:', { items, formData });
     
     toast({
@@ -52,7 +72,29 @@ export const Cart = ({ items, clearCart }: Props) => {
             <div key={item.id} className="flex justify-between items-center py-4 border-b border-cream last:border-0">
               <div>
                 <h3 className="font-serif text-lg text-charcoal">{item.name}</h3>
+                <p className="text-stone text-sm">Size: {item.size}</p>
                 <p className="text-stone text-sm">${item.price}</p>
+              </div>
+              <div className="flex items-center gap-4">
+                <button
+                  onClick={() => updateQuantity(item.id, Math.max(1, item.quantity - 1))}
+                  className="p-1 hover:bg-cream rounded transition-colors"
+                >
+                  <Minus size={18} />
+                </button>
+                <span className="w-8 text-center">{item.quantity}</span>
+                <button
+                  onClick={() => updateQuantity(item.id, item.quantity + 1)}
+                  className="p-1 hover:bg-cream rounded transition-colors"
+                >
+                  <Plus size={18} />
+                </button>
+                <button
+                  onClick={() => removeItem(item.id)}
+                  className="p-1 hover:bg-cream rounded transition-colors ml-2"
+                >
+                  <X size={18} />
+                </button>
               </div>
             </div>
           ))}

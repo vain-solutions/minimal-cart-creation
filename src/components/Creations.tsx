@@ -9,21 +9,21 @@ const products: Product[] = [
     name: "The Essential Blazer",
     description: "A timeless piece crafted from Italian wool, featuring clean lines and expert tailoring.",
     price: 890,
-    image: "/placeholder.svg"
+    video: "/placeholder-video.mp4"  // Replace with actual video path
   },
   {
     id: 2,
     name: "Silk Evening Dress",
     description: "Elegant silk dress with minimalist draping and subtle details.",
     price: 1290,
-    image: "/placeholder.svg"
+    video: "/placeholder-video.mp4"  // Replace with actual video path
   },
   {
     id: 3,
     name: "Tailored Pants",
     description: "High-waisted pants with perfect proportions and exceptional fit.",
     price: 590,
-    image: "/placeholder.svg"
+    video: "/placeholder-video.mp4"  // Replace with actual video path
   }
 ];
 
@@ -53,7 +53,7 @@ export const Creations = ({ addToCart, hasItems }: Props) => {
   };
 
   return (
-    <section id="creations" className="min-h-screen flex flex-col items-center justify-center px-6 py-20 bg-white dark:bg-charcoal">
+    <section id="creations" className="min-h-screen flex flex-col items-center justify-center px-6 py-20 bg-white dark:bg-charcoal scroll-mt-16">
       <div className="w-full max-w-6xl">
         <h2 className="font-serif text-3xl md:text-4xl text-center mb-16 text-charcoal dark:text-cream">Our Creations</h2>
         
@@ -66,10 +66,15 @@ export const Creations = ({ addToCart, hasItems }: Props) => {
               onMouseLeave={() => setHoveredProduct(null)}
             >
               <div className="aspect-[3/4] bg-cream dark:bg-stone/10 overflow-hidden">
-                <img
-                  src={product.image}
-                  alt={product.name}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                <video
+                  src={product.video}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className={`w-full h-full object-cover transition-all duration-500 ${
+                    hoveredProduct === product.id ? 'blur-sm scale-105' : ''
+                  }`}
                 />
               </div>
               

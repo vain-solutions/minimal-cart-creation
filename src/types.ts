@@ -4,7 +4,7 @@ export interface Product {
   name: string;
   description: string;
   price: number;
-  image: string;
+  video: string;  // Changed from image to video
 }
 
 export type ProductSize = 'S' | 'M' | 'L' | 'XL';
