@@ -84,3 +84,22 @@
     @apply bg-background text-foreground;
   }
 }
+
+@font-face {
+  font-family: 'BrownSugar';
+  src: url('/fonts/BrownSugar.woff2') format('woff2');
+}
+
+.font-BrownSugar {
+  font-family: 'BrownSugar', sans-serif;
+  font-size: 60px;
+}
+
+.h1 {
+  margin-bottom: 0;
+}
+
+.h2 {
+  font-size: 20px;
+  margin-bottom: 50px;
+}

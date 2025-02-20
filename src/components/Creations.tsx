@@ -6,24 +6,24 @@ import { type Product, type ProductSize, type CartItem } from '../types';
 const products: Product[] = [
   {
     id: 1,
-    name: "The Essential Blazer",
-    description: "A timeless piece crafted from Italian wool, featuring clean lines and expert tailoring.",
-    price: 890,
-    video: "/placeholder-video.mp4"  // Replace with actual video path
+    name: "Fourrure bouclée / doublure en satin",
+    description: "Offrez-vous une touche de luxe et de confort avec ce manteau exceptionnel. Sa texture douce et chaleureuse en fausse fourrure bouclée doublure en satin vous enveloppe de chaleur tout en ajoutant une note chic à votre look.",
+    price: 800,
+    video: "/videos/noire.mp4"
   },
   {
     id: 2,
-    name: "Silk Evening Dress",
-    description: "Elegant silk dress with minimalist draping and subtle details.",
+    name: "Peau de vache camel",
+    description: "Découvrez notre nouvelle collection de manteau en fausses peau de vache camel plus 5 autre couleurs de la collection Arabia Couture !",
     price: 1290,
-    video: "/placeholder-video.mp4"  // Replace with actual video path
+    video: "/videos/vache.mp4" 
   },
   {
     id: 3,
-    name: "Tailored Pants",
-    description: "High-waisted pants with perfect proportions and exceptional fit.",
+    name: "Fausse fourrure bouclée",
+    description: "Avec ses lignes élégantes et son design raffiné, ce manteau est parfait pour toutes les occasions, que ce soit pour une sortie en ville ou une soirée élégante. Les détails soignés et la qualité des matériaux en font une pièce incontournable de votre garde-robe.",
     price: 590,
-    video: "/placeholder-video.mp4"  // Replace with actual video path
+    video: "/videos/violet.mp4"
   }
 ];
 

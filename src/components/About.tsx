@@ -10,7 +10,8 @@ export const About = () => {
   return (
     <section className="min-h-screen flex flex-col items-center justify-center px-6 bg-cream dark:bg-charcoal">
       <div className="max-w-2xl text-center animate-fade-up">
-        <h1 className="font-serif text-4xl md:text-6xl mb-8 text-charcoal dark:text-cream">Atelier</h1>
+        <h1 className="h1 font-BrownSugar text-4xl md:text-6xl mb-8 text-charcoal dark:text-cream">Arabia</h1>
+        <h2 className="h2 font-serif text-charcoal dark:text-cream">couture</h2>
         <p className="font-sans text-lg md:text-xl text-stone dark:text-stone/80 leading-relaxed mb-12">
           Crafting timeless pieces that embody elegance and sophistication. Each creation is meticulously designed and handcrafted, reflecting our dedication to excellence and artisanal craftsmanship.
         </p>
