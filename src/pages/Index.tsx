@@ -1,13 +1,27 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+
+import { useState } from 'react';
+import { About } from '../components/About';
+import { Creations } from '../components/Creations';
+import { Cart } from '../components/Cart';
+import { type Product } from '../types';
 
 const Index = () => {
+  const [cartItems, setCartItems] = useState<Product[]>([]);
+
+  const addToCart = (product: Product) => {
+    setCartItems([...cartItems, product]);
+  };
+
+  const clearCart = () => {
+    setCartItems([]);
+  };
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-gray-600">Start building your amazing project here!</p>
-      </div>
-    </div>
+    <main className="bg-cream scroll-smooth">
+      <About />
+      <Creations addToCart={addToCart} hasItems={cartItems.length > 0} />
+      <Cart items={cartItems} clearCart={clearCart} />
+    </main>
   );
 };
 
