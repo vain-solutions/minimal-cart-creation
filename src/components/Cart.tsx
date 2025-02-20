@@ -1,6 +1,6 @@
 
 import { useState } from 'react';
-import { toast } from '@/components/ui/use-toast';
+import { toast } from '../components/ui/use-toast';
 import { type Product } from '../types';
 
 interface Props {
