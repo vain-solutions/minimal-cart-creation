@@ -18,7 +18,7 @@ export const About = () => {
           <span>Follow us on Instagram</span>
         </a>
         <div>
-          <button onClick={scrollToCreations} className="flex flex-col items-center text-stone hover:text-charcoal dark:hover:text-cream transition-colors duration-300 py-0 my-0">
+          <button onClick={scrollToCreations} className="flex flex-col items-center text-stone hover:text-charcoal dark:hover:text-cream transition-colors duration-300 py-0 my-[30px]">
             <span className="text-sm mb-2 py-0 my-[80px] mx-0">Discover Our Creations</span>
             <ChevronDown className="animate-bounce" />
           </button>
