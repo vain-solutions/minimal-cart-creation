@@ -37,12 +37,7 @@ export const Creations = ({ addToCart, hasItems }: Props) => {
   const [quantity, setQuantity] = useState(1);
 
   const scrollToCart = () => {
-    const element = document.getElementById('cart');
-    if (element) {
-      const yOffset = window.innerHeight * 0.1; // 10% of viewport height
-      const y = element.getBoundingClientRect().top + window.pageYOffset - yOffset;
-      window.scrollTo({ top: y, behavior: 'smooth' });
-    }
+    window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
   };
 
   const handleAddToCart = (product: Product) => {

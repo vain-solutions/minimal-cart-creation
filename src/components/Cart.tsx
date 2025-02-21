@@ -17,6 +17,10 @@ export const Cart = ({ items, clearCart, updateQuantity, removeItem }: Props) =>
     lastName: '',
     email: '',
     phone: '',
+    address: '',
+    city: '',
+    postalCode: '',
+    country: '',
     instagram: ''
   });
 
@@ -56,6 +60,10 @@ export const Cart = ({ items, clearCart, updateQuantity, removeItem }: Props) =>
       lastName: '',
       email: '',
       phone: '',
+      address: '',
+      city: '',
+      postalCode: '',
+      country: '',
       instagram: ''
     });
   };
@@ -64,7 +72,7 @@ export const Cart = ({ items, clearCart, updateQuantity, removeItem }: Props) =>
 
   return (
     <section id="cart" className="min-h-screen flex flex-col items-center px-6 py-20 bg-cream dark:bg-charcoal">
-      <div className="w-full max-w-2xl mt-16"> {/* Added top margin */}
+      <div className="w-full max-w-2xl mt-16">
         <h2 className="font-serif text-3xl md:text-4xl text-center mb-16 text-charcoal dark:text-cream">Your Selection</h2>
         
         <div className="bg-white dark:bg-stone/10 p-8 mb-8 animate-fade-up">
@@ -130,6 +138,40 @@ export const Cart = ({ items, clearCart, updateQuantity, removeItem }: Props) =>
             className="w-full px-4 py-2 bg-white border border-stone focus:outline-none focus:border-charcoal transition-colors"
             value={formData.email}
             onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+          />
+          <input
+            type="text"
+            placeholder="Address"
+            required
+            className="w-full px-4 py-2 bg-white border border-stone focus:outline-none focus:border-charcoal transition-colors"
+            value={formData.address}
+            onChange={(e) => setFormData({ ...formData, address: e.target.value })}
+          />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <input
+              type="text"
+              placeholder="City"
+              required
+              className="w-full px-4 py-2 bg-white border border-stone focus:outline-none focus:border-charcoal transition-colors"
+              value={formData.city}
+              onChange={(e) => setFormData({ ...formData, city: e.target.value })}
+            />
+            <input
+              type="text"
+              placeholder="Postal Code"
+              required
+              className="w-full px-4 py-2 bg-white border border-stone focus:outline-none focus:border-charcoal transition-colors"
+              value={formData.postalCode}
+              onChange={(e) => setFormData({ ...formData, postalCode: e.target.value })}
+            />
+          </div>
+          <input
+            type="text"
+            placeholder="Country"
+            required
+            className="w-full px-4 py-2 bg-white border border-stone focus:outline-none focus:border-charcoal transition-colors"
+            value={formData.country}
+            onChange={(e) => setFormData({ ...formData, country: e.target.value })}
           />
           <input
             type="tel"
