@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { ShoppingBag, ChevronDown, Plus, Minus } from 'lucide-react';
 import { type Product, type ProductSize, type CartItem } from '../types';
@@ -39,7 +38,11 @@ export const Creations = ({ addToCart, hasItems }: Props) => {
 
   const scrollToCart = () => {
     const element = document.getElementById('cart');
-    element?.scrollIntoView({ behavior: 'smooth' });
+    if (element) {
+      const yOffset = window.innerHeight * 0.1; // 10% of viewport height
+      const y = element.getBoundingClientRect().top + window.pageYOffset - yOffset;
+      window.scrollTo({ top: y, behavior: 'smooth' });
+    }
   };
 
   const handleAddToCart = (product: Product) => {
@@ -57,7 +60,7 @@ export const Creations = ({ addToCart, hasItems }: Props) => {
       <div className="w-full max-w-6xl">
         <h2 className="font-serif text-3xl md:text-4xl text-center mb-16 text-charcoal dark:text-cream">Our Creations</h2>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-24">
           {products.map((product) => (
             <div
               key={product.id}
@@ -128,7 +131,7 @@ export const Creations = ({ addToCart, hasItems }: Props) => {
         </div>
 
         {hasItems && (
-          <div className="flex flex-col items-center animate-fade-up">
+          <div className="flex flex-col items-center animate-fade-up mb-12">
             <button
               onClick={scrollToCart}
               className="flex flex-col items-center text-stone hover:text-charcoal dark:hover:text-cream transition-colors duration-300"

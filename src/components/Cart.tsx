@@ -63,8 +63,8 @@ export const Cart = ({ items, clearCart, updateQuantity, removeItem }: Props) =>
   if (items.length === 0) return null;
 
   return (
-    <section id="cart" className="min-h-screen flex flex-col items-center justify-center px-6 py-20 bg-cream dark:bg-charcoal">
-      <div className="w-full max-w-2xl">
+    <section id="cart" className="min-h-screen flex flex-col items-center px-6 py-20 bg-cream dark:bg-charcoal">
+      <div className="w-full max-w-2xl mt-16"> {/* Added top margin */}
         <h2 className="font-serif text-3xl md:text-4xl text-center mb-16 text-charcoal dark:text-cream">Your Selection</h2>
         
         <div className="bg-white dark:bg-stone/10 p-8 mb-8 animate-fade-up">
