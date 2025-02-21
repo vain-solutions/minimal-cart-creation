@@ -63,42 +63,42 @@ export const Cart = ({ items, clearCart, updateQuantity, removeItem }: Props) =>
   if (items.length === 0) return null;
 
   return (
-    <section id="cart" className="min-h-screen flex flex-col items-center justify-center px-6 py-20 bg-cream">
+    <section id="cart" className="min-h-screen flex flex-col items-center justify-center px-6 py-20 bg-cream dark:bg-charcoal">
       <div className="w-full max-w-2xl">
-        <h2 className="font-serif text-3xl md:text-4xl text-center mb-16 text-charcoal">Your Selection</h2>
+        <h2 className="font-serif text-3xl md:text-4xl text-center mb-16 text-charcoal dark:text-cream">Your Selection</h2>
         
-        <div className="bg-white p-8 mb-8 animate-fade-up">
+        <div className="bg-white dark:bg-stone/10 p-8 mb-8 animate-fade-up">
           {items.map((item) => (
-            <div key={item.id} className="flex justify-between items-center py-4 border-b border-cream last:border-0">
+            <div key={item.id} className="flex justify-between items-center py-4 border-b border-cream dark:border-stone/20 last:border-0">
               <div>
-                <h3 className="font-serif text-lg text-charcoal">{item.name}</h3>
-                <p className="text-stone text-sm">Size: {item.size}</p>
-                <p className="text-stone text-sm">${item.price}</p>
+                <h3 className="font-serif text-lg text-charcoal dark:text-cream">{item.name}</h3>
+                <p className="text-stone dark:text-stone/80 text-sm">Size: {item.size}</p>
+                <p className="text-stone dark:text-stone/80 text-sm">${item.price}</p>
               </div>
               <div className="flex items-center gap-4">
                 <button
                   onClick={() => updateQuantity(item.id, Math.max(1, item.quantity - 1))}
-                  className="p-1 hover:bg-cream rounded transition-colors"
+                  className="p-1 hover:bg-cream dark:hover:bg-stone/20 rounded transition-colors text-charcoal dark:text-cream"
                 >
                   <Minus size={18} />
                 </button>
-                <span className="w-8 text-center">{item.quantity}</span>
+                <span className="w-8 text-center text-charcoal dark:text-cream">{item.quantity}</span>
                 <button
                   onClick={() => updateQuantity(item.id, item.quantity + 1)}
-                  className="p-1 hover:bg-cream rounded transition-colors"
+                  className="p-1 hover:bg-cream dark:hover:bg-stone/20 rounded transition-colors text-charcoal dark:text-cream"
                 >
                   <Plus size={18} />
                 </button>
                 <button
                   onClick={() => removeItem(item.id)}
-                  className="p-1 hover:bg-cream rounded transition-colors ml-2"
+                  className="p-1 hover:bg-cream dark:hover:bg-stone/20 rounded transition-colors ml-2 text-charcoal dark:text-cream"
                 >
                   <X size={18} />
                 </button>
               </div>
             </div>
           ))}
-          <div className="flex justify-between items-center pt-6 font-serif text-xl">
+          <div className="flex justify-between items-center pt-6 font-serif text-xl text-charcoal dark:text-cream">
             <span>Total</span>
             <span>${total}</span>
           </div>
