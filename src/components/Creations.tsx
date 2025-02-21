@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { ShoppingBag, ChevronDown, Plus, Minus } from 'lucide-react';
 import { type Product, type ProductSize, type CartItem } from '../types';
+import { toast } from 'react-toastify';
 
 const products: Product[] = [
   {
@@ -48,6 +49,18 @@ export const Creations = ({ addToCart, hasItems }: Props) => {
     });
     setSelectedSize('M');
     setQuantity(1);
+    toast({
+      title: "Item Added to Cart",
+      description: "Scroll down to view your order",
+      action: (
+        <button
+          onClick={scrollToCart}
+          className="px-3 py-2 bg-charcoal text-white rounded-md hover:bg-black transition-colors"
+        >
+          View Cart
+        </button>
+      ),
+    });
   };
 
   return (

@@ -1,5 +1,6 @@
 
 import { ChevronDown, Instagram } from "lucide-react";
+import { DarkModeToggle } from "./DarkModeToggle";
 
 export const About = () => {
   const scrollToCreations = () => {
@@ -13,6 +14,7 @@ export const About = () => {
 
   return (
     <section className="min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 bg-cream dark:bg-charcoal">
+      <DarkModeToggle />
       <div className="max-w-2xl text-center animate-fade-up mt-16 md:mt-24">
         <h1 className="h1 font-BrownSugar text-4xl md:text-6xl lg:text-7xl mb-8 text-charcoal dark:text-cream animate-fade-in">Arabia</h1>
         <h2 className="h2 font-serif text-charcoal dark:text-cream animate-fade-in opacity-0" style={{ animationDelay: '0.2s', animationFillMode: 'forwards' }}>couture</h2>
