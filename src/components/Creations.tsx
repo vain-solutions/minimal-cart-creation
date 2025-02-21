@@ -1,7 +1,8 @@
+
 import { useState } from 'react';
 import { ShoppingBag, ChevronDown, Plus, Minus } from 'lucide-react';
 import { type Product, type ProductSize, type CartItem } from '../types';
-import { toast } from 'react-toastify';
+import { toast } from '../components/ui/use-toast';
 
 const products: Product[] = [
   {
