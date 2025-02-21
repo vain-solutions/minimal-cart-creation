@@ -51,19 +51,19 @@ export const Creations = ({ addToCart, hasItems }: Props) => {
   };
 
   return (
-    <section id="creations" className="min-h-screen flex flex-col items-center justify-center px-6 py-20 bg-white dark:bg-charcoal scroll-mt-16">
+    <section id="creations" className="min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 py-20 bg-white dark:bg-charcoal scroll-mt-16">
       <div className="w-full max-w-6xl">
-        <h2 className="font-serif text-3xl md:text-4xl text-center mb-16 text-charcoal dark:text-cream">Our Creations</h2>
+        <h2 className="font-serif text-3xl md:text-4xl text-center mb-16 text-charcoal dark:text-cream animate-fade-in">Our Creations</h2>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-24">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-24">
           {products.map((product) => (
             <div
               key={product.id}
-              className="relative group"
+              className="relative group transform hover:scale-105 transition-transform duration-300 animate-fade-up"
               onMouseEnter={() => setHoveredProduct(product.id)}
               onMouseLeave={() => setHoveredProduct(null)}
             >
-              <div className="aspect-[3/4] bg-cream dark:bg-stone/10 overflow-hidden">
+              <div className="aspect-[3/4] bg-cream dark:bg-stone/10 overflow-hidden rounded-lg shadow-lg">
                 <video
                   src={product.video}
                   autoPlay
@@ -71,15 +71,15 @@ export const Creations = ({ addToCart, hasItems }: Props) => {
                   muted
                   playsInline
                   className={`w-full h-full object-cover transition-all duration-500 ${
-                    hoveredProduct === product.id ? 'blur-sm scale-105' : ''
+                    hoveredProduct === product.id ? 'scale-110 blur-sm' : ''
                   }`}
                 />
               </div>
               
               {hoveredProduct === product.id && (
-                <div className="absolute inset-0 bg-charcoal bg-opacity-90 flex flex-col items-center justify-center p-6 text-white animate-fade-in">
+                <div className="absolute inset-0 bg-charcoal bg-opacity-90 flex flex-col items-center justify-center p-6 text-white animate-fade-in rounded-lg">
                   <h3 className="font-serif text-2xl mb-3">{product.name}</h3>
-                  <p className="text-sm text-center mb-4">{product.description}</p>
+                  <p className="text-sm text-center mb-4 line-clamp-3">{product.description}</p>
                   <p className="font-serif text-xl mb-6">${product.price}</p>
                   
                   <div className="flex gap-4 mb-4">
@@ -89,7 +89,7 @@ export const Creations = ({ addToCart, hasItems }: Props) => {
                         onClick={() => setSelectedSize(size)}
                         className={`w-8 h-8 flex items-center justify-center border ${
                           selectedSize === size ? 'border-white bg-white/20' : 'border-white/50'
-                        }`}
+                        } hover:bg-white/30 transition-colors`}
                       >
                         {size}
                       </button>
@@ -99,14 +99,14 @@ export const Creations = ({ addToCart, hasItems }: Props) => {
                   <div className="flex items-center gap-4 mb-6">
                     <button
                       onClick={() => setQuantity(Math.max(1, quantity - 1))}
-                      className="p-1 hover:bg-white/20 rounded"
+                      className="p-1 hover:bg-white/20 rounded transition-colors"
                     >
                       <Minus size={18} />
                     </button>
                     <span className="w-8 text-center">{quantity}</span>
                     <button
                       onClick={() => setQuantity(quantity + 1)}
-                      className="p-1 hover:bg-white/20 rounded"
+                      className="p-1 hover:bg-white/20 rounded transition-colors"
                     >
                       <Plus size={18} />
                     </button>
@@ -114,7 +114,7 @@ export const Creations = ({ addToCart, hasItems }: Props) => {
 
                   <button
                     onClick={() => handleAddToCart(product)}
-                    className="flex items-center gap-2 px-6 py-2 border border-white hover:bg-white hover:text-charcoal transition-colors duration-300"
+                    className="flex items-center gap-2 px-6 py-2 border border-white hover:bg-white hover:text-charcoal transition-all duration-300 transform hover:scale-105"
                   >
                     <ShoppingBag size={18} />
                     <span>Add to Cart</span>
@@ -129,7 +129,7 @@ export const Creations = ({ addToCart, hasItems }: Props) => {
           <div className="flex flex-col items-center animate-fade-up mb-12">
             <button
               onClick={scrollToCart}
-              className="flex flex-col items-center text-stone hover:text-charcoal dark:hover:text-cream transition-colors duration-300"
+              className="flex flex-col items-center text-stone hover:text-charcoal dark:hover:text-cream transition-colors duration-300 hover:scale-105 transform"
             >
               <span className="text-sm mb-2">View Cart</span>
               <ChevronDown className="animate-bounce" />
