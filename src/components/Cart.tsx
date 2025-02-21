@@ -20,7 +20,6 @@ export const Cart = ({ items, clearCart, updateQuantity, removeItem }: Props) =>
     address: '',
     city: '',
     postalCode: '',
-    country: '',
     instagram: ''
   });
 
@@ -63,7 +62,6 @@ export const Cart = ({ items, clearCart, updateQuantity, removeItem }: Props) =>
       address: '',
       city: '',
       postalCode: '',
-      country: '',
       instagram: ''
     });
   };
@@ -165,14 +163,6 @@ export const Cart = ({ items, clearCart, updateQuantity, removeItem }: Props) =>
               onChange={(e) => setFormData({ ...formData, postalCode: e.target.value })}
             />
           </div>
-          <input
-            type="text"
-            placeholder="Country"
-            required
-            className="w-full px-4 py-2 bg-white border border-stone focus:outline-none focus:border-charcoal transition-colors"
-            value={formData.country}
-            onChange={(e) => setFormData({ ...formData, country: e.target.value })}
-          />
           <input
             type="tel"
             placeholder="Phone Number"
