@@ -10,7 +10,19 @@ const Index = () => {
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
 
   const addToCart = (product: CartItem) => {
-    setCartItems([...cartItems, product]);
+    const existingItem = cartItems.find(
+      item => item.id === product.id && item.size === product.size
+    );
+
+    if (existingItem) {
+      setCartItems(cartItems.map(item =>
+        item.id === product.id && item.size === product.size
+          ? { ...item, quantity: item.quantity + product.quantity }
+          : item
+      ));
+    } else {
+      setCartItems([...cartItems, product]);
+    }
   };
 
   const updateQuantity = (itemId: number, newQuantity: number) => {
