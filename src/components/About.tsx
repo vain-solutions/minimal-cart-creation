@@ -1,4 +1,6 @@
+
 import { ChevronDown, Instagram } from "lucide-react";
+
 export const About = () => {
   const scrollToCreations = () => {
     const element = document.getElementById('creations');
@@ -6,6 +8,7 @@ export const About = () => {
       behavior: 'smooth'
     });
   };
+
   return <section className="min-h-screen flex flex-col items-center justify-center px-6 bg-cream dark:bg-charcoal">
       <div className="max-w-2xl text-center animate-fade-up">
         <h1 className="h1 font-BrownSugar text-4xl md:text-6xl mb-8 text-charcoal dark:text-cream">Arabia</h1>
