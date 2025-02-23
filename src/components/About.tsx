@@ -18,7 +18,7 @@ export const About = () => {
       <div className="fixed inset-0 -z-10">
         <div className="absolute inset-0 bg-cream dark:bg-charcoal" />
         <div className="absolute inset-0 animate-gradient-x">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(163,162,158,0.3)_0%,transparent_70%)] dark:bg-[radial-gradient(circle_at_center,rgba(245,245,240,0.15)_0%,transparent_70%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(163,162,158,0.5)_0%,transparent_70%)] dark:bg-[radial-gradient(circle_at_center,rgba(245,245,240,0.25)_0%,transparent_70%)]" />
         </div>
       </div>
 
