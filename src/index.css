@@ -28,7 +28,7 @@
   }
 
   html {
-    font-size: 90%; /* This makes everything ~90% of the original size */
+    font-size: 90%;
   }
 
   body {
@@ -84,4 +84,17 @@
 .h2 {
   font-size: 20px;
   margin-bottom: 50px;
+}
+
+@keyframes gradient-x {
+  0%, 100% {
+    transform: translateX(0%);
+  }
+  50% {
+    transform: translateX(25%);
+  }
+}
+
+.animate-gradient-x {
+  animation: gradient-x 15s ease infinite;
 }

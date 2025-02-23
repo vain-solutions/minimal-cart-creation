@@ -13,7 +13,15 @@ export const About = () => {
   };
 
   return (
-    <section id="about" className="min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 bg-cream dark:bg-charcoal">
+    <section id="about" className="relative min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 overflow-hidden">
+      {/* Animated gradient background */}
+      <div className="fixed inset-0 -z-10">
+        <div className="absolute inset-0 bg-cream dark:bg-charcoal" />
+        <div className="absolute inset-0 animate-gradient-x">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(163,162,158,0.15)_0%,transparent_50%)] dark:bg-[radial-gradient(circle_at_center,rgba(245,245,240,0.08)_0%,transparent_50%)]" />
+        </div>
+      </div>
+
       <DarkModeToggle />
       <div className="max-w-2xl text-center animate-fade-up mt-16 md:mt-24">
         <h1 className="h1 font-BrownSugar text-4xl md:text-6xl lg:text-7xl mb-8 text-charcoal dark:text-cream animate-fade-in">Arabia</h1>
