@@ -15,52 +15,28 @@ export const About = () => {
   return (
     <section id="about" className="min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 bg-cream dark:bg-charcoal">
       <DarkModeToggle />
-      
-      {/* Decorative elements */}
-      <div className="absolute top-0 left-0 w-32 h-32 border-t-2 border-l-2 border-stone/20 dark:border-stone/10 m-8 rounded-tl-3xl" />
-      <div className="absolute bottom-0 right-0 w-32 h-32 border-b-2 border-r-2 border-stone/20 dark:border-stone/10 m-8 rounded-br-3xl" />
-      
-      <div className="max-w-2xl text-center animate-fade-up mt-16 md:mt-24 relative">
-        {/* Decorative line */}
-        <div className="absolute -left-12 top-1/2 w-8 h-[1px] bg-stone/30 dark:bg-stone/20 hidden md:block" />
-        <div className="absolute -right-12 top-1/2 w-8 h-[1px] bg-stone/30 dark:bg-stone/20 hidden md:block" />
-        
-        <h1 className="h1 font-BrownSugar text-4xl md:text-6xl lg:text-7xl mb-8 text-charcoal dark:text-cream animate-fade-in relative">
-          Arabia
-          <span className="absolute -bottom-3 left-1/2 transform -translate-x-1/2 w-16 h-[1px] bg-stone/30 dark:bg-stone/20"></span>
-        </h1>
-        
-        <h2 className="h2 font-serif text-charcoal dark:text-cream animate-fade-in opacity-0 relative" 
-          style={{ animationDelay: '0.2s', animationFillMode: 'forwards' }}>
-          couture
-        </h2>
-        
-        <p className="font-sans text-lg md:text-xl text-stone dark:text-stone/80 leading-relaxed mb-12 animate-fade-in opacity-0 px-4 sm:px-0" 
-          style={{ animationDelay: '0.4s', animationFillMode: 'forwards' }}>
+      <div className="max-w-2xl text-center animate-fade-up mt-16 md:mt-24">
+        <h1 className="h1 font-BrownSugar text-4xl md:text-6xl lg:text-7xl mb-8 text-charcoal dark:text-cream animate-fade-in">Arabia</h1>
+        <h2 className="h2 font-serif text-charcoal dark:text-cream animate-fade-in opacity-0" style={{ animationDelay: '0.2s', animationFillMode: 'forwards' }}>couture</h2>
+        <p className="font-sans text-lg md:text-xl text-stone dark:text-stone/80 leading-relaxed mb-12 animate-fade-in opacity-0 px-4 sm:px-0" style={{ animationDelay: '0.4s', animationFillMode: 'forwards' }}>
           Crafting timeless pieces that embody elegance and sophistication. Each creation is meticulously designed and handcrafted, reflecting our dedication to excellence and artisanal craftsmanship.
         </p>
-        
         <a 
           href="https://instagram.com" 
           target="_blank" 
           rel="noopener noreferrer" 
-          className="inline-flex items-center gap-2 text-stone hover:text-charcoal dark:hover:text-cream transition-colors duration-300 mb-8 hover:scale-105 transform animate-fade-in opacity-0 relative group"
+          className="inline-flex items-center gap-2 text-stone hover:text-charcoal dark:hover:text-cream transition-colors duration-300 mb-8 hover:scale-105 transform animate-fade-in opacity-0"
           style={{ animationDelay: '0.6s', animationFillMode: 'forwards' }}
         >
-          <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-charcoal dark:bg-cream transition-all duration-300 group-hover:w-full"></span>
           <Instagram size={24} />
           <span>Follow us on Instagram</span>
         </a>
-        
-        <div className="absolute bottom-12 left-0 right-0 flex justify-center animate-fade-in opacity-0" 
-          style={{ animationDelay: '0.8s', animationFillMode: 'forwards' }}>
+        <div className="absolute bottom-12 left-0 right-0 flex justify-center animate-fade-in opacity-0" style={{ animationDelay: '0.8s', animationFillMode: 'forwards' }}>
           <button 
             onClick={scrollToCreations} 
-            className="flex flex-col items-center text-stone hover:text-charcoal dark:hover:text-cream transition-colors duration-300 hover:scale-105 transform group"
+            className="flex flex-col items-center text-stone hover:text-charcoal dark:hover:text-cream transition-colors duration-300 hover:scale-105 transform"
           >
-            <span className="text-sm mb-2 group-hover:translate-y-1 transition-transform duration-300">
-              Discover Our Creations
-            </span>
+            <span className="text-sm mb-2">Discover Our Creations</span>
             <ChevronDown className="animate-bounce" />
           </button>
         </div>
